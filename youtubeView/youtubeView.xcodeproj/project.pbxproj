@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A307E2DB261567A500A67F24 /* VideoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A307E2DA261567A500A67F24 /* VideoViewController.storyboard */; };
+		A307E2DE261567B400A67F24 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307E2DD261567B400A67F24 /* VideoViewController.swift */; };
 		A317B757261566E900A7FD30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A317B756261566E900A7FD30 /* AppDelegate.swift */; };
 		A317B759261566E900A7FD30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A317B758261566E900A7FD30 /* SceneDelegate.swift */; };
 		A317B75B261566E900A7FD30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A317B75A261566E900A7FD30 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A307E2DA261567A500A67F24 /* VideoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoViewController.storyboard; sourceTree = "<group>"; };
+		A307E2DD261567B400A67F24 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		A317B753261566E900A7FD30 /* youtubeView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = youtubeView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A317B756261566E900A7FD30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A317B758261566E900A7FD30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A307E2D82615678100A67F24 /* videoView */ = {
+			isa = PBXGroup;
+			children = (
+				A307E2DA261567A500A67F24 /* VideoViewController.storyboard */,
+				A307E2DD261567B400A67F24 /* VideoViewController.swift */,
+			);
+			path = videoView;
+			sourceTree = "<group>";
+		};
 		A317B74A261566E900A7FD30 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +69,7 @@
 		A317B755261566E900A7FD30 /* youtubeView */ = {
 			isa = PBXGroup;
 			children = (
+				A307E2D82615678100A67F24 /* videoView */,
 				A317B756261566E900A7FD30 /* AppDelegate.swift */,
 				A317B758261566E900A7FD30 /* SceneDelegate.swift */,
 				A317B75A261566E900A7FD30 /* ViewController.swift */,
@@ -127,6 +141,7 @@
 				A317B763261566EB00A7FD30 /* LaunchScreen.storyboard in Resources */,
 				A317B760261566EB00A7FD30 /* Assets.xcassets in Resources */,
 				A317B75E261566E900A7FD30 /* Main.storyboard in Resources */,
+				A307E2DB261567A500A67F24 /* VideoViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +154,7 @@
 			files = (
 				A317B75B261566E900A7FD30 /* ViewController.swift in Sources */,
 				A317B757261566E900A7FD30 /* AppDelegate.swift in Sources */,
+				A307E2DE261567B400A67F24 /* VideoViewController.swift in Sources */,
 				A317B759261566E900A7FD30 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
