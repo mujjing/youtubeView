@@ -21,7 +21,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdy-Sm-UQo">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.96078431369999995" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jordy1" translatesAutoresizingMaskIntoConstraints="NO" id="YBz-AD-iBI">
                                 <rect key="frame" x="0.0" y="44" width="414" height="280"/>
@@ -99,6 +99,9 @@
                         <outlet property="BackView" destination="qdy-Sm-UQo" id="4pp-v6-WnD"/>
                         <outlet property="baseBackGrountView" destination="mPE-1L-y99" id="osC-5U-Wm4"/>
                         <outlet property="videoImageView" destination="YBz-AD-iBI" id="PUg-Tw-gCp"/>
+                        <outlet property="videoImageViewHeightConstraint" destination="I2f-6R-fyF" id="uxD-gA-TLl"/>
+                        <outlet property="videoImageViewLeadingConstraint" destination="gA6-s2-mP2" id="yl6-KM-RkH"/>
+                        <outlet property="videoImageViewTrailingConstraint" destination="ttt-V4-ORR" id="hqF-ho-3Un"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ppx-J4-Jml" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
