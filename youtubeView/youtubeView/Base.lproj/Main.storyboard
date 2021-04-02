@@ -30,11 +30,33 @@
                                     <constraint firstAttribute="height" constant="249" id="poj-8g-RW1"/>
                                 </constraints>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duc-nS-GnY">
+                                <rect key="frame" x="12" y="726" width="390" height="70"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IzG-MQ-e1M">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="70"/>
+                                        <color key="backgroundColor" red="0.0" green="0.80784313730000001" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="yao-xp-fgz"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="M4l-dv-Pnc"/>
+                                    <constraint firstAttribute="bottom" secondItem="IzG-MQ-e1M" secondAttribute="bottom" id="QrR-BK-Vp8"/>
+                                    <constraint firstItem="IzG-MQ-e1M" firstAttribute="leading" secondItem="duc-nS-GnY" secondAttribute="leading" id="d0Y-z1-jOM"/>
+                                    <constraint firstItem="IzG-MQ-e1M" firstAttribute="top" secondItem="duc-nS-GnY" secondAttribute="top" id="pjL-86-7jx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="duc-nS-GnY" secondAttribute="bottom" constant="66" id="BiT-Wt-NZr"/>
+                            <constraint firstItem="duc-nS-GnY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="CVC-9w-fyG"/>
                             <constraint firstItem="7UV-xg-exU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RSm-ys-7cI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="duc-nS-GnY" secondAttribute="trailing" constant="12" id="UMp-Ag-PPT"/>
                             <constraint firstItem="7UV-xg-exU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Xi9-D0-C7D"/>
                             <constraint firstItem="v96-Gp-icG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="j3u-ZL-vZ2"/>
                             <constraint firstItem="v96-Gp-icG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nTe-qC-yKV"/>
@@ -43,6 +65,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomImageView" destination="IzG-MQ-e1M" id="qc7-GO-f2Q"/>
+                        <outlet property="bottomVideoView" destination="duc-nS-GnY" id="6HU-El-Hku"/>
                         <outlet property="image" destination="v96-Gp-icG" id="Fbj-og-FHO"/>
                         <outlet property="showVideoBtn" destination="7UV-xg-exU" id="w6b-mM-8lb"/>
                     </connections>
@@ -54,6 +78,9 @@
     </scenes>
     <resources>
         <image name="jordy1" width="399" height="399"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
