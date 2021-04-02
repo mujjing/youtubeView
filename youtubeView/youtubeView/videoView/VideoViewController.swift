@@ -29,6 +29,9 @@ class VideoViewController: UIViewController {
         let ecludeValue = (view.safeAreaInsets.bottom + (imageViewCenterY ?? 0))
         return view.frame.maxY - ecludeValue
     }
+    var minimumImageViewTrailingConstant: CGFloat {
+        -(view.frame.width - (150 + 12))
+    }
     private var imageViewCenterY: CGFloat?
     
     override func viewDidLoad() {
@@ -104,14 +107,15 @@ extension VideoViewController {
             // alpha값 설정
             let alphaRatio = move.y / ( parentViewHeight / 2)
             describeView.alpha = 1 - alphaRatio
+            baseBackGrountView.alpha = 1 - alphaRatio
             
             //이미지뷰 가로 폭 움직임 150(최소값)
             let originalWidth = self.view.frame.width
-            let minimumImageViewTrailingConstant = -(originalWidth - (150 + 12))
+            let miniImageViewTrailingConstant = -(originalWidth - (150 + 12))
             let constant = originalWidth - move.y
             
             if minimumImageViewTrailingConstant > constant {
-                videoImageViewTrailingConstraint.constant = -minimumImageViewTrailingConstant
+                videoImageViewTrailingConstraint.constant = -miniImageViewTrailingConstant
                 return
             }
             
@@ -121,23 +125,52 @@ extension VideoViewController {
             
         } else if gesture.state == .ended {//움직임이 멈췄을 때
             
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: [], animations: {
-                self.backToIdentityAllView(imageView: imageView as! UIImageView)
-            }) // 스프링 처럼 튀어오르는 효과주기
+            if move.y < self.view.frame.height / 3 {
+                UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: [], animations: {
+                    self.backToIdentityAllView(imageView: imageView as! UIImageView)
+                }) // 스프링 처럼 튀어오르는 효과주기
+            } else {
+                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: []) {
+                    self.moveToBottom(imageView: imageView as! UIImageView)
+                }
+            }
         }
     }
     
     private func moveToBottom(imageView: UIImageView) {
+        //imageView 설정
         imageView.transform = CGAffineTransform(translationX: 0, y: videoImageMaxY)
-        BackView.transform = CGAffineTransform(translationX: 0, y: videoImageMaxY)
+        videoImageViewTrailingConstraint.constant = -minimumImageViewTrailingConstant
+        videoImageViewHeightConstraint.constant = 70
+        
         videoImageBackView.transform = CGAffineTransform(translationX: 0, y: videoImageMaxY)
+        BackView.alpha = 0
+        describeView.alpha = 0
+        baseBackGrountView.alpha = 0
+        
+        self.view.layoutIfNeeded()
     }
     
     private func backToIdentityAllView(imageView: UIImageView) {
+        // imageView설정
         imageView.transform = .identity
-        self.videoImageViewHeightConstraint.constant = 280
-        self.videoImageViewLeadingConstraint.constant = 0
-        self.videoImageViewTrailingConstraint.constant = 0
+        
+        videoImageViewHeightConstraint.constant = 280
+        videoImageViewLeadingConstraint.constant = 0
+        videoImageViewTrailingConstraint.constant = 0
+        
+        //backView설정
+        backViewTrailingContraint.constant = 0
+        backViewBottomConstraint.constant = 0
+        backViewTopConstraint.constant = 0
+        BackView.alpha = 1
+        
+        //describeView설정
+        describeViewTopConstraint.constant = 0
+        describeView.alpha = 1
+        
+        baseBackGrountView.alpha = 1
+        
         self.view.layoutIfNeeded()
     }
 }
