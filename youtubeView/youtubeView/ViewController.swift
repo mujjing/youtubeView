@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomVideoViewBottom: NSLayoutConstraint!
     @IBOutlet weak var bottomVideoImageWidth: NSLayoutConstraint!
     @IBOutlet weak var bottomVideoImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var closeBottom: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ extension ViewController {
         bottomVideoView.isHidden = true
         image.layer.cornerRadius = 10
         showVideoBtn.addTarget(self, action: #selector(didTabImage), for: .touchUpInside)
+        closeBottom.addTarget(self, action: #selector(didTabClose), for: .touchUpInside)
         NotificationCenter.default.addObserver(self, selector: #selector(showImage), name: .init("thumbnailImage"), object: nil)
     }
     
@@ -118,6 +120,15 @@ extension ViewController {
                 imageView.transform = .identity
                 self.view.layoutIfNeeded()
             }
+        }
+    }
+    
+    @objc private func didTabClose() {
+        UIView.animate(withDuration: 0.2) {
+            self.bottomVideoViewBottom.constant = -200
+            self.view.layoutIfNeeded()
+        } completion: { _ in
+            self.bottomVideoView.isHidden = true
         }
     }
 }

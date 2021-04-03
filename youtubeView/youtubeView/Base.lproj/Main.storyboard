@@ -41,11 +41,18 @@
                                             <constraint firstAttribute="width" constant="150" id="yao-xp-fgz"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCM-7i-9Lb">
+                                        <rect key="frame" x="353" y="0.0" width="37" height="70"/>
+                                        <state key="normal" title="close"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="nCM-7i-9Lb" firstAttribute="top" secondItem="duc-nS-GnY" secondAttribute="top" id="B2K-Yy-bLP"/>
                                     <constraint firstAttribute="height" constant="70" id="M4l-dv-Pnc"/>
+                                    <constraint firstAttribute="trailing" secondItem="nCM-7i-9Lb" secondAttribute="trailing" id="OxQ-xx-0dJ"/>
                                     <constraint firstItem="IzG-MQ-e1M" firstAttribute="leading" secondItem="duc-nS-GnY" secondAttribute="leading" id="d0Y-z1-jOM"/>
+                                    <constraint firstAttribute="bottom" secondItem="nCM-7i-9Lb" secondAttribute="bottom" id="eWh-WO-9uf"/>
                                     <constraint firstItem="IzG-MQ-e1M" firstAttribute="top" secondItem="duc-nS-GnY" secondAttribute="top" id="pjL-86-7jx"/>
                                 </constraints>
                             </view>
@@ -73,6 +80,7 @@
                         <outlet property="bottomVideoViewHeight" destination="M4l-dv-Pnc" id="URL-mx-DxF"/>
                         <outlet property="bottomVideoViewLeading" destination="CVC-9w-fyG" id="8HP-kV-1rm"/>
                         <outlet property="bottomVideoViewTrailing" destination="UMp-Ag-PPT" id="NzF-ER-gLa"/>
+                        <outlet property="closeBottom" destination="nCM-7i-9Lb" id="Fkh-lt-tib"/>
                         <outlet property="image" destination="v96-Gp-icG" id="Fbj-og-FHO"/>
                         <outlet property="showVideoBtn" destination="7UV-xg-exU" id="w6b-mM-8lb"/>
                     </connections>
