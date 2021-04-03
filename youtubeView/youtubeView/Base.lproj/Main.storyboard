@@ -37,6 +37,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="70"/>
                                         <color key="backgroundColor" red="0.0" green="0.80784313730000001" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="auc-Rm-5BG"/>
                                             <constraint firstAttribute="width" constant="150" id="yao-xp-fgz"/>
                                         </constraints>
                                     </imageView>
@@ -44,7 +45,6 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="M4l-dv-Pnc"/>
-                                    <constraint firstAttribute="bottom" secondItem="IzG-MQ-e1M" secondAttribute="bottom" id="QrR-BK-Vp8"/>
                                     <constraint firstItem="IzG-MQ-e1M" firstAttribute="leading" secondItem="duc-nS-GnY" secondAttribute="leading" id="d0Y-z1-jOM"/>
                                     <constraint firstItem="IzG-MQ-e1M" firstAttribute="top" secondItem="duc-nS-GnY" secondAttribute="top" id="pjL-86-7jx"/>
                                 </constraints>
@@ -66,7 +66,13 @@
                     </view>
                     <connections>
                         <outlet property="bottomImageView" destination="IzG-MQ-e1M" id="qc7-GO-f2Q"/>
+                        <outlet property="bottomVideoImageHeight" destination="auc-Rm-5BG" id="xaY-KC-uVS"/>
+                        <outlet property="bottomVideoImageWidth" destination="yao-xp-fgz" id="80r-pW-DuF"/>
                         <outlet property="bottomVideoView" destination="duc-nS-GnY" id="6HU-El-Hku"/>
+                        <outlet property="bottomVideoViewBottom" destination="BiT-Wt-NZr" id="hwf-ee-tAT"/>
+                        <outlet property="bottomVideoViewHeight" destination="M4l-dv-Pnc" id="URL-mx-DxF"/>
+                        <outlet property="bottomVideoViewLeading" destination="CVC-9w-fyG" id="8HP-kV-1rm"/>
+                        <outlet property="bottomVideoViewTrailing" destination="UMp-Ag-PPT" id="NzF-ER-gLa"/>
                         <outlet property="image" destination="v96-Gp-icG" id="Fbj-og-FHO"/>
                         <outlet property="showVideoBtn" destination="7UV-xg-exU" id="w6b-mM-8lb"/>
                     </connections>
